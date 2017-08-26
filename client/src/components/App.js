@@ -3,6 +3,8 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import Login from './Login';
 import Staging from './Staging';
+import Header from './Header';
+import PrivateRoute from './PrivateRoute';
 
 class App extends Component {
     render() {
@@ -10,8 +12,9 @@ class App extends Component {
           <div className="container">
               <BrowserRouter>
                   <div>
+                      <Header/>
                       <Route exact path="/" component={Login}/>
-                      <Route path="/staging" component={Staging}/>
+                      <PrivateRoute path="/staging" component={Staging}/>
                   </div>
               </BrowserRouter>
           </div>  
