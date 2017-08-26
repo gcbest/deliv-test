@@ -20,10 +20,7 @@ class Staging extends Component {
         // staging data in an array
         const staging_arr = res.data.data;
 
-        console.log(staging_arr);
         // converting data into row elements
-
-        /**** {new Date(survey.dateSent).toLocaleDateString()} ****/
         const staging_elems = _.map(staging_arr, ({
             order_id, ref_order_number, created_at, payment: { status }, customer: { name }, type, delivery : { schedule_availability: { first_available_date } }
         }) => {

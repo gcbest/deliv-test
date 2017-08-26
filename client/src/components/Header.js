@@ -1,18 +1,23 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
-const auth = require('../utils/auth');
+import logo from "./deliveright-logo.jpg";
 
 const Header = withRouter(({ history }) => (
-    auth.isAuthenticated ? (
-        <p>
-            Welcome! <button onClick={() => {
-            auth.signout(() => history.push('/'))
-        }}>Sign out</button>
-        </p>
-    ) : (
-        <p>You are not logged in.</p>
+        <div className="row">
+            <div className="col s12 m6">
+                <Link to="/">
+                    <img className="responsive-img" src={logo} alt="Deliveright"/>
+                </Link>
+            </div>
+            <div className="col s12 m6">
+                <h4 id="title">White Glove Delivery Service</h4>
+            </div>
+            <div className="col s12">
+                <hr/>
+            </div>
+        </div>
     )
-));
+);
 
 export default Header;

@@ -70,8 +70,8 @@ class Login extends Component {
         }
 
         return (
-            <div className="row">
-                Login
+            <div className="row grey lighten-4 login">
+                <h2 className="welcome">Welcome Back!</h2>
                 <form className="col s12" onSubmit={this.handleSubmit}>
                     <div className="input-field col s12">
                         <input placeholder="Username" name="user_name" id="user_name" type="text" className="validate"/>
@@ -79,7 +79,9 @@ class Login extends Component {
                     <div className="input-field col s12">
                         <input placeholder="Password" name="password" id="password" type="password" className="validate"/>
                     </div>
-                    <input type="submit"/>
+                    <a className="col s6 offset-s3 btn btn-large waves-effect indigo">
+                        <input id="submit" type="submit"/>
+                    </a>
                 </form>
             </div>
         );
