@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 
 class Login extends Component {
+    constructor(props) {
+        super(props);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
     async handleSubmit(event) {
         // prevent form submission
         event.preventDefault();
+        debugger;
 
         // get username and password from form
         const user_name = event.target.user_name.value;
@@ -22,7 +29,8 @@ class Login extends Component {
         // storing access token in session storage
         window.sessionStorage.setItem('access-token', res.data.data.access_token);
 
-
+        // redirect to the staging page
+        this.props.history.push('/staging');
     }
 
     render() {
@@ -43,4 +51,4 @@ class Login extends Component {
     }
 }
 
-export default Login;
+export default withRouter(Login);

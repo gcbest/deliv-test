@@ -29,7 +29,7 @@ class Staging extends Component {
         }) => {
             return (
               <tr key={order_id}>
-                  <td>{order_id}</td>
+                  <td><a href="#">{order_id}</a></td>
                   <td>{ref_order_number}</td>
                   <td>{new Date(created_at).toLocaleDateString()}</td>
                   <td>{status}</td>
