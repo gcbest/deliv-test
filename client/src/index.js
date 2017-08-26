@@ -3,9 +3,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import App from './components/App';
-// development axios helpers instead of postman since we need login credentials
-import axios from 'axios';
-window.axios = axios;
 
 ReactDOM.render(
     <App/>,
